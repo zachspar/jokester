@@ -20,7 +20,9 @@ class Jokester(object):
             "Trump Jokes": ("GET", "https://api.tronalddump.io/random/quote",
                             {"accept": "application/json"}, 'value'),
             "Dad Jokes": ("GET", "https://icanhazdadjoke.com/",
-                          {"accept": 'application/json'}, 'joke')
+                          {"accept": 'application/json'}, 'joke'),
+            "Chuck Norris Jokes": ("GET", "https://api.chucknorris.io/jokes/random",
+                                   {"accept": 'application/json'}, 'value'),
         }
 
     def _listen_for_press(self):
