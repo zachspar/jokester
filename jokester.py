@@ -19,7 +19,7 @@ class Jokester(object):
         self._change_category_button = Button(21)
         self._led = Squid(18, 23, 24)
         if not test:
-            Thread(target=self._listen_for_press, daemon=True).start()
+            Thread(target=self._listen_for_category_change, daemon=True).start()
         self._category_requests = {
             "Trump Jokes": ("GET", "https://api.tronalddump.io/random/quote",
                             {"accept": "application/json"}, 'value'),
@@ -33,7 +33,7 @@ class Jokester(object):
     def __del__(self):
         self._led.set_color(OFF)
 
-    def _listen_for_press(self):
+    def _listen_for_category_change(self):
         while True:
             if self._change_category_button.is_pressed():
                 if self._category_idx == len(self._category_requests) - 1:
