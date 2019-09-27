@@ -8,8 +8,10 @@ from jokester import Jokester
 
 def main():
     jokes = Jokester()
-    # jokes.main_loop()
-    jokes.test_all_apis()
+    # jokes = Jokester(test=True)
+    jokes.main_loop()
+    # jokes.test_all_apis()
+    del jokes
 
 
 if __name__ == '__main__':
