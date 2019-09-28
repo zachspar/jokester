@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
 """
-Run the Jokester main program.
+Driver program to run the Jokester.
 
 """
-from jokester import Jokester
-
-
 def main():
     jokes = Jokester()
     # jokes = Jokester(test=True)
